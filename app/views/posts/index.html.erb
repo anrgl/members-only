@@ -1,5 +1,8 @@
-<ul>
-    <% @posts.each do |post| %>
-        <li><%= post.body %>
-    <% end %>
-</ul>
+<% @posts.each do |post| %>
+    <div>
+        <% if user_signed_in? %>
+            <div><%= post.user.name %></div>
+        <% end %>
+        <div><%= post.body %></div>
+    </div>
+<% end %>
