@@ -1,10 +1,10 @@
 <%= form_with model: @post do |form| %>
-    <div>
-        <%= form.label :body %>
-        <%= form.text_area :body %>
+    <div class="mb-3">
+        <%= form.label :body, class: "form-label" %>
+        <%= form.text_area :body, class: "form-control" %>
     </div>
 
-    <div>
-        <%= form.submit %>
+    <div class="mb-3">
+        <%= form.submit class: "btn btn-primary" %>
     </div>
 <% end %>

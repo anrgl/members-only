@@ -13,8 +13,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
+      flash[:notice] = 'Post created successfully'
       redirect_to root_path
     else
+      flash.now[:alert] = @post.errors.full_messages.first
       render :new
     end
   end

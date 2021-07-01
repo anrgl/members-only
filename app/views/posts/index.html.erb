@@ -1,8 +1,14 @@
 <% @posts.each do |post| %>
-    <div>
-        <% if user_signed_in? %>
-            <div><%= post.user.name %></div>
-        <% end %>
-        <div><%= post.body %></div>
+    <div class="card mb-5">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p><%= post.body %></p>
+          <% if user_signed_in? %>
+            <footer class="blockquote-footer"><%= post.user.name %></footer>
+            <% else %>
+            <footer class="blockquote-footer">Anonymouse</footer>
+            <% end %>
+        </blockquote>
+      </div>
     </div>
 <% end %>
